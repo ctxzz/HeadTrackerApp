@@ -1,0 +1,27 @@
+name: HeadTrackerApp
+options:
+  bundleIdPrefix: com.omata
+  deploymentTarget:
+    iOS: 17.0
+targets:
+  HeadTrackerApp:
+    type: application
+    platform: iOS
+    sources: 
+      - HeadTrackerApp
+    info:
+      path: HeadTrackerApp/Info.plist
+      properties:
+        CFBundleDisplayName: HeadTracker
+        UILaunchStoryboardName: LaunchScreen
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSMotionUsageDescription: This app needs access to motion data from your AirPods Pro to display head orientation.
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: HeadTrackerApp/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.omata.HeadTrackerApp
+    attributes:
+      SystemCapabilities:
+        com.apple.BackgroundModes:
+          enabled: true
